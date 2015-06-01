@@ -36,6 +36,7 @@ func NewRedisStore(host string, port int, db int) (*RedisStore, error) {
 	pool := redis.NewPool(f, redisMaxIdleConn)
 	pool.MaxActive = redisMaxActive
 	pool.Wait = true
+	pool.MaxIdle = redisMaxActive
 
 	store := &RedisStore{pool: pool, host: host, port: port, db: db}
 	store.stat = newRedisStat(store)
