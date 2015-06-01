@@ -1,3 +1,0 @@
-[submodule "go-log"]
-	path = go-log
-	url = https://github.com/siddontang/go-log
