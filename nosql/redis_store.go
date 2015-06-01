@@ -292,9 +292,8 @@ func (r *RedisStore) do(cmd string, args ...interface{}) (interface{}, error) {
 	conn.Close()
 
 	if duration > time.Millisecond*500 {
-		println("RedisStore.do",
-			fmt.Sprintf("it took %.2f sec", duration.Seconds()),
-			0, "cmd", cmd, "args", args, ",", "active_count", activteCount, "max_idle", r.pool.MaxIdle, "max_active", r.pool.MaxActive)
+		log.Error(fmt.Sprintf("cmd[%s] - args[%v] took %.2f sec. active_count[%v],max_idle[%v],max_active[%v]",
+			cmd, args, duration.Seconds(), activteCount, r.pool.MaxIdle, r.pool.MaxActive))
 	}
 
 	if err == redis.ErrNil {
