@@ -1,6 +1,11 @@
 #coding:utf8
 '''
 使用 desc table; 解释MySQL的表结构。生成 golang的结构体定义
+用法：
+
+$> python gen-go-model.py  -D data_name -t table_name
+$> 输出go结构体定义语法
+
 '''
 import sys
 import logging
