@@ -85,7 +85,7 @@ def convertType(typ):
     elif typ.find("decimal"):
         return "float64"
     elif typ.find('datetime'):
-        return "time.time"
+        return "time.Time"
     elif typ.find("bool"):
         return "bool"
     else:
