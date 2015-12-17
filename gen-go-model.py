@@ -80,13 +80,13 @@ def convertType(typ):
     typ=typ.lower()
     if typ.find('int')>0:
         return "int64"
-    elif typ.find('char')>0 or typ.find("text") or typ.find("enum"):
+    elif typ.find('char')>0 or typ.find("text")>0 or typ.find("enum")>0:
         return "string"
-    elif typ.find("decimal"):
+    elif typ.find("decimal")>0:
         return "float64"
-    elif typ.find('datetime'):
+    elif typ.find('datetime')>0:
         return "time.Time"
-    elif typ.find("bool"):
+    elif typ.find("bool")>0:
         return "bool"
     else:
         return typ
